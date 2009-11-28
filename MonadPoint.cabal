@@ -1,0 +1,34 @@
+name:		MonadPoint
+version:	0.1.0
+category:	Unclassified
+synopsis:	A Monadic Presentation Tool
+description:	A Monadic Presentation Tool
+license:	BSD3
+license-file:	LICENSE
+author:		Hideyuki Tanaka
+maintainer:	tanaka.hideyuki@gmail.com
+homepage:	http://hoge.hoge
+Cabal-Version:	>=1.6
+tested-with:	GHC==6.10.4
+build-type:	Simple
+
+data-files:
+
+
+library
+  build-depends:	base>=4 && <5, mtl
+  build-depends:	utf8-string
+  build-depends:	stb-image
+  build-depends:	http-easy
+  build-depends:	json
+  build-depends:	OpenGLRaw, GLUT, FTGL
+  ghc-options:	 	-Wall -O2
+  hs-source-dirs:	src
+
+  Exposed-modules:
+    MonadPoint
+    MonadPoint.Base
+    MonadPoint.Config
+    MonadPoint.Font
+    MonadPoint.Presentation
+    MonadPoint.Rendering

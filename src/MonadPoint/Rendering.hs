@@ -29,20 +29,20 @@ data RenderState =
   {
     datDir :: String,
     
-    aspect :: Double, -- ƒAƒXƒyƒNƒg”ä
-    font :: Font, -- ƒtƒHƒ“ƒg
-    fixFont :: Font, -- “™•ƒtƒHƒ“ƒg
+    aspect :: Double, -- ã‚¢ã‚¹ãƒšã‚¯ãƒˆæ¯”
+    font :: Font, -- ãƒ•ã‚©ãƒ³ãƒˆ
+    fixFont :: Font, -- ç­‰å¹…ãƒ•ã‚©ãƒ³ãƒˆ
     
-    imgs :: [(String, TextureObject)], -- ‰æ‘œ
+    imgs :: [(String, TextureObject)], -- ç”»åƒ
     
-    kmStat :: IORef KeyMouseState, -- ƒL[Eƒ}ƒEƒXî•ñ
+    kmStat :: IORef KeyMouseState, -- ã‚­ãƒ¼ãƒ»ãƒã‚¦ã‚¹æƒ…å ±
     
-    tick :: Double, -- ƒy[ƒWØ‚è‘Ö‚¦—¦
-    curPage :: Rendering (), -- PageData, -- Œ»İ‚Ìƒy[ƒW
-    nextPage :: Maybe (Rendering ()), -- Maybe PageData, -- ‘JˆÚæƒy[ƒW
-    direction :: Bool, -- ‘JˆÚ•ûŒü
+    tick :: Double, -- ãƒšãƒ¼ã‚¸åˆ‡ã‚Šæ›¿ãˆç‡
+    curPage :: Rendering (), -- PageData, -- ç¾åœ¨ã®ãƒšãƒ¼ã‚¸
+    nextPage :: Maybe (Rendering ()), -- Maybe PageData, -- é·ç§»å…ˆãƒšãƒ¼ã‚¸
+    direction :: Bool, -- é·ç§»æ–¹å‘
     
-    plugins :: [Rendering ()] -- ƒvƒ‰ƒOƒCƒ“
+    plugins :: [Rendering ()] -- ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
   }
 
 data KeyMouseState =

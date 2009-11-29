@@ -1,5 +1,5 @@
 name:		MonadPoint
-version:	0.1.0
+version:	0.1.1
 category:	Unclassified
 synopsis:	A Monadic Presentation Tool
 description:	A Monadic Presentation Tool
@@ -18,7 +18,7 @@ data-files:
 library
   build-depends:	base>=4 && <5, mtl
   build-depends:	utf8-string
-  build-depends:	stb-image
+  build-depends:	stb-image>=0.2, bitmap<0.1
   build-depends:	OpenGLRaw, GLUT, FTGL
   ghc-options:	 	-Wall -O2
   hs-source-dirs:	src

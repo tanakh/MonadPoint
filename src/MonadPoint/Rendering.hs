@@ -14,6 +14,7 @@ import Graphics.Rendering.FTGL hiding (AlignLeft, AlignCenter, AlignRight)
 import Graphics.UI.GLUT as GLUT hiding (Font)
 
 import Codec.Image.STB as STB
+import Data.Bitmap.IO
 
 import qualified MonadPoint.Config as Config
 
@@ -231,14 +232,14 @@ loadTexture fname = do
   case rs of
     Left err -> error err
     Right img -> do
-      withImage img $ \ptr (w, h) comp -> do
+      withBitmap img $ \(w, h) comp padding ptr -> do
         -- print (w, h, comp)
         [tex] <- genObjectNames 1
         textureBinding Texture2D $= Just tex              
         textureWrapMode Texture2D S $= (Repeated, Repeat)
         textureWrapMode Texture2D T $= (Repeated, Repeat)
         textureFilter Texture2D $= ((Linear', Nothing), Linear')
-        texImage2D Nothing NoProxy 0 RGBA' (TextureSize2D w h) 0 $
+        texImage2D Nothing NoProxy 0 RGBA' (TextureSize2D (fromIntegral w) (fromIntegral h)) 0 $
           PixelData (if comp==4 then RGBA else RGB) UnsignedByte ptr
         return tex
 
